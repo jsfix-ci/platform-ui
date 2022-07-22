@@ -21,6 +21,8 @@ const fetchReq = require('node-fetch');
 const fs = require('fs');
 const dotenv = require('dotenv').config({ path: __dirname + '/../.env' });
 
+/* TODO: JSFIX could not patch the breaking change:
+req.body can no longer be a string*/
 fetchReq(`${process.env.GATEWAY_API_ROOT}/graphql`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
